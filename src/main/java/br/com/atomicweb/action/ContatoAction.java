@@ -1,12 +1,12 @@
 package br.com.atomicweb.action;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import br.com.atomicweb.model.Contato;
+import br.com.atomicweb.repository.Contatos;
 
 public class ContatoAction extends ActionSupport {
 
@@ -14,31 +14,17 @@ public class ContatoAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = -8205834090635913361L;
+	private String id;
 	private Contato c;
+	private Contatos cs;
 	private List<Contato> lista;
-	private Long id;
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		lista = new ArrayList<>();
-		c = new Contato();
-		c.setId(Long.parseLong("1"));
-		c.setNome("Claudemir");
-		c.setEmail("claudemir@bsd.com.br");
-		lista.add(c);
-		c = new Contato();
-		c.setId(Long.parseLong("2"));
-		c.setNome("Karine");
-		c.setEmail("karine@gmail.com.br");
-		lista.add(c);
+		cs = new Contatos();
+		lista = cs.getContatos();		
 		return SUCCESS;
 	}
 
@@ -49,8 +35,18 @@ public class ContatoAction extends ActionSupport {
 	
 	public String editar() {
 		c = new Contato();
-		System.out.println(this.id);
+		c.setId(Long.valueOf(this.id));
+		cs = new Contatos();
+		c = cs.getContato(c);
 		return SUCCESS;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public List<Contato> getLista() {

@@ -11,9 +11,6 @@
 
 	<h1>Êxito</h1>
 
-	<!-- <s:property value="c.id"/>
-<s:property value="c.nome"/> 
-<s:property value="c.email"/> -->
 	<s:a href="novocontato">Novo</s:a>
 	<table>
 		<tr>
@@ -22,18 +19,17 @@
 			<td>E-mail</td>
 			<td>Ações</td>
 		</tr>
-		
-		
+
+
 		<s:iterator value="lista">
 			<tr>
 
 				<td><s:property value="id" /></td>
 				<td><s:property value="nome" /></td>
 				<td><s:property value="email" /></td>
-				<td><s:url id="editar_contato" action="editarcontato">
-					<s:param name="id">${id}</s:param>
-				</s:url>
-				<s:a action="%{editar_contato}">Editar</s:a></td>
+				<td><!-- <s:url id="editar_contato" action="editarcontato">
+						<s:param name="id">${id}</s:param>
+					 </s:url> --> <s:a action="%{editar_contato}">Editar</s:a></td> 
 			</tr>
 
 
