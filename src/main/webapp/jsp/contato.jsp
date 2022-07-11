@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<s:form action="contato">
+	<s:form action="salvarcontato">
 		<s:textfield name="id" label="Id"></s:textfield>
 		<s:textfield name="nome" label="Nome"></s:textfield>
 		<s:textfield name="email" label="Email"></s:textfield>

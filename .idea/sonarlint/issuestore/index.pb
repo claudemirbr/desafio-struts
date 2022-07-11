@@ -1,0 +1,19 @@
+
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+O
+src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/main/java/br/com/atomicweb/model/Contato.java,5/c/5cb16a2bb9d92dc0e46c9e7c03673913280d889a
+p
+@src/main/java/br/com/atomicweb/repository/ContatoRepository.java,a/8/a87c56c56a7c7cb51fde25bdb3f0398807bbb5ac
+s
+Csrc/main/java/br/com/atomicweb/service/impl/ContatoServiceImpl.java,8/2/822a3dc1386a6df96cf3ff5fd25adf85a6ad15d1
+j
+:src/main/java/br/com/atomicweb/service/ContatoService.java,7/0/709fe4c92250593d3338630211fd4070178d1e81
+|
+Lsrc/main/java/br/com/atomicweb/repository/impl/CriaEntityManagerFactory.java,9/5/9558786ed7b75cb3c3ffe686fdbd0f7faf041dcf
+y
+Isrc/main/java/br/com/atomicweb/repository/impl/ContatoRepositoryImpl.java,f/3/f3baa468451ed608a5ab6379be3d96c50c70d889

@@ -1,9 +1,10 @@
 package br.com.atomicweb.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.atomicweb.model.Contato;
+import br.com.atomicweb.service.ContatoService;
+import br.com.atomicweb.service.impl.ContatoServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 import lombok.Data;
 
@@ -18,39 +19,49 @@ public class ContatoAction extends ActionSupport {
 	private Contato contato;
 	private List<Contato> contatos;
 
+	private ContatoService contatoService;
+
+	public ContatoAction () {
+		contatoService = new ContatoServiceImpl();
+	}
+
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		contatos = new ArrayList<>();
-		contato = new Contato();
-		contato.setId(1);
-		contato.setNome("Claudemir");
-		contato.setEmail("claudemir@bsd.com.br");
-		contatos.add(contato);
-		contato = new Contato();
-		contato.setId(2);
-		contato.setNome("Karine");
-		contato.setEmail("karine@gmail.com.br");
-		contatos.add(contato);
-		contato = new Contato();
-		contato.setId(this.id);
-		contato.setNome(this.nome);
-		contato.setEmail(this.email);
-		contatos.add(contato);
+		contatos = contatoService.listaContatos();
 		return SUCCESS;
 	}
 
 	public String novo() {
 		return SUCCESS;
 	}
+
+	public String salva() {
+		contato = new Contato();
+		contato.setNome(this.nome);
+		contato.setEmail(this.email);
+		if (contato.getId() == null) {
+			contatoService.salvaContato(contato);
+		} else {
+			contatoService.editaContato(contato);
+		}
+		contatos = contatoService.listaContatos();
+		return SUCCESS;
+	}
 	
 	public String editar() {
-		System.out.println("Editando... " + this.id);
+		contato = new Contato();
+		contato.setId(this.id);
+		contato = contatoService.getContato(contato);
+		this.nome = contato.getNome();
+		this.email = contato.getEmail();
 		return SUCCESS;
 	}
 
 	public String excluir() {
-		System.out.println("Excluindo... " + this.id);
+		contato = new Contato();
+		contato.setId(this.id);
+		contatoService.deletaContato(contato);
+		contatos = contatoService.listaContatos();
 		return SUCCESS;
 	}
 

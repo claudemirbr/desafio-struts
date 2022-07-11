@@ -5,14 +5,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css">
+    <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
     <title>Contatos</title>
 </head>
 <body>
-
+<%@ include file="menu.jsp"%>
+<main role="main" class="container">
 <h1>Êxito</h1>
 
-<s:a href="novocontato">Novo</s:a>
-<table>
+<s:a class="btn btn-primary" href="novocontato" >Novo</s:a>
+
+<table class="table table-sm table-striped">
     <tr>
         <td>Id</td>
         <td>Nome</td>
@@ -27,17 +31,15 @@
             <td><s:property value="#contato.email"/></td>
             <td>
 				<a href="editarcontato?id=<s:property value="#contato.id"/>">
-					<button>Editar</button>
+					<button class="btn btn-warning">Editar</button>
 				</a>
-			</td>
-            <td>
                 <a href="excluircontato?id=<s:property value="#contato.id"/>">
-                    <button>Excluir</button>
+                    <button class="btn btn-danger">Excluir</button>
                 </a>
             </td>
         </tr>
     </s:iterator>
 </table>
-
+</main>
 </body>
 </html>

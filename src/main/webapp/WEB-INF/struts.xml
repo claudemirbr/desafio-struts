@@ -17,6 +17,10 @@
 		<action name="novocontato" class="br.com.atomicweb.action.ContatoAction" method="novo">
 			<result name="success">/jsp/contato.jsp</result>
 		</action>
+
+		<action name="salvarcontato" class="br.com.atomicweb.action.ContatoAction" method="salva">
+			<result name="success">/jsp/contatoList.jsp</result>
+		</action>
 		
 		<action name="editarcontato" class="br.com.atomicweb.action.ContatoAction" method="editar">
 			<result name="success">/jsp/contato.jsp</result>

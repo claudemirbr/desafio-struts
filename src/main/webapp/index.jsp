@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>    
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css">
+    <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+    <title>Home</title>
 </head>
 <body>
-<%
-out.print("hello world");
-%>
-<s:a href="contato">Contato</s:a>
+<%@ include file="jsp/menu.jsp"%>
+<main role="main" class="container">
+    <%
+        out.print("hello world");
+    %>
+    <s:a href="contato">Contato</s:a>
+</main>
 </body>
 </html>
